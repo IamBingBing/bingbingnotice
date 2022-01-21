@@ -5,6 +5,7 @@ use pocketmine\event\Listener;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\utils\Config;
+use pocketmine\player\Player;
 
 class bingbingnotice extends PluginBase implements Listener{ 
     static $instance;
@@ -16,7 +17,7 @@ class bingbingnotice extends PluginBase implements Listener{
         $this->config= $config->getAll();
     }
     public function getinstance():bingbingnotice{
-        
+        self::$instance= $this;
         return self::$instance;
     }
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args):bool{
@@ -33,11 +34,12 @@ class bingbingnotice extends PluginBase implements Listener{
     }
     
     public function sendmessage(array $players , string $msg){
-        /*
-         * @param Player $p;
-         * */
+        /**
+         * @var Player $p;
+         */
         foreach ($players as $p){
             $p->sendMessage($msg);
+            
         }
     }
     public function arraytostring(array $args) : string{
