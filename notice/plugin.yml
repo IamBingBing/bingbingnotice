@@ -1,0 +1,13 @@
+name : bingbingnotice
+main: bingbing\bingbingnotice
+author: bingbing
+version: 1.0.0
+api: ['4.0.0']
+commands:
+  공지:
+    permission: OP
+  notic:
+    permission: OP
+permissions:
+  OP:
+    default: false
